@@ -96,7 +96,9 @@ then
 
 	echo "Capturando Icono..."
 
-	wget "https://raw.github.com/alfa30/Browser-User-Installing-TOR/master/icon/tor-logo.svg" -O "~/.local/share/icons/hicolor/scalable/apps/tor-logo.svg"
+	wget "https://raw.github.com/alfa30/Browser-User-Installing-TOR/master/icon/tor-logo.svg" -O "/tmp/icon-tor.svg"
+
+	cp "/tmp/icon-tor.svg" "$(echo ~)/.local/share/icons/hicolor/scalable/apps/tor-browser.svg"
 
 	echo "Creando enlace..."
 
