@@ -78,19 +78,25 @@ then
     wget -O $tem_download_file $download_file
 	tar xzvf $tem_download_file -C "/tmp/"
 
-	mkdir $dir_install
+	mkdir $dir_install -p
 	cp "/tmp/tor-browser_$language/" $dir_install -R -f
 
 	echo "Creando Lanzador..."
 
 	echo "[Desktop Entry]" > ~/.local/share/applications/Tor\ Browser.desktop
+	echo "Version=1.0" >> ~/.local/share/applications/Tor\ Browser.desktop
 	echo "Name=Tor Browser" >> ~/.local/share/applications/Tor\ Browser.desktop
-	echo "Comment=Navegador Anónimo" >> ~/.local/share/applications/Tor\ Browser.desktop
+	echo "Comment=Proteja su privacidad. Defiéndete de vigilancia de la red y análisis de tráfico." >> ~/.local/share/applications/Tor\ Browser.desktop
 	echo "Exec=$(echo ~)/.tor-browser/tor-browser_es-ES/start-tor-browser" >> ~/.local/share/applications/Tor\ Browser.desktop
 	echo "Terminal=false" >> ~/.local/share/applications/Tor\ Browser.desktop
 	echo "Type=Application" >> ~/.local/share/applications/Tor\ Browser.desktop
+	echo "Icon=tor-browser" >> ~/.local/share/applications/Tor\ Browser.desktop
 
 	chmod 600 ~/.local/share/applications/Tor\ Browser.desktop
+
+	echo "Capturando Icono..."
+
+	wget "https://raw.github.com/alfa30/Browser-User-Installing-TOR/master/icon/tor-logo.svg" -O "~/.local/share/icons/hicolor/scalable/apps/tor-logo.svg"
 
 	echo "Creando enlace..."
 
