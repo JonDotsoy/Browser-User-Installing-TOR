@@ -98,7 +98,7 @@ then
 
 	wget "https://raw.github.com/alfa30/Browser-User-Installing-TOR/master/icon/tor-logo.svg" -O "/tmp/icon-tor.svg"
 
-	cp "/tmp/icon-tor.svg" "$(echo ~)/.local/share/icons/hicolor/scalable/apps/tor-browser.svg"
+	cp "/tmp/icon-tor.svg" "$(echo ~)/.local/share/icons/hicolor/scalable/apps/tor-browser.svg" -R -f
 
 	echo "Creando enlace..."
 
